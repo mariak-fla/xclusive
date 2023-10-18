@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background: var(--gray-50);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+:root {
+    --ff-title: "Playfair Display", serif;
+    --ff-body: "Lato", sans-serif;
+    --gray-50: #fafaf9;
+    --gray-100: #f5f5f4;
+    --gray-300: #d6d3d1;
+    --gray-400: #a3a3a3;
+    --gray-600: #57534e;
+    --gray-800: #292524;
+}
+
+/* section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+ */
+
+h2 {
+    font-family: var(--ff-title);
+    font-size: clamp(1.6rem, 1.292rem + 1.231vw, 2.4rem);
+    font-weight: 300;
+    color: var(--gray-800);
+}
+
+p {
+    font-family: var(--ff-body);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.video-container video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.video-txt {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5vh 5vw;
+    background: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,.5) 80%);
+}
+
+.video-txt h2 {
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(3rem, 2.231rem + 3.077vw, 5rem);
+    color: var(--gray-100);
+}
+
+.video-txt p {
+    color: var(--gray-300);
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 15vh;
+    font-family: var(--ff-body);
+    font-size: clamp(0.85rem, 0.792rem + 0.231vw, 1rem);
+}
+
+.video-overlay-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+#video {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+.scroll-sign {
+    position: absolute;
+    bottom: .75rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: jumping 1s infinite ease-in-out;
+    color: var(--gray-300);
+}
+
+.scroll-sign p {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-family: var(--ff-body);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.scroll-sign svg {
+    width: 15px;
+}
+
+section#services {
+    text-align: center;
+    padding: 10vh 5vw;
+}
+
+#services h3 {
+    font-family: var(--ff-body);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: left;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem .35rem;
+    margin: -4rem 0 1rem;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.5) 100%);
+    color: var(--gray-100);
+}
+
+#services h3::before {
+    content: "";
+    display: block;
+    position: relative;
+    margin-right: .5rem;
+    width: 20%;
+    height: .5px;
+    background-color: var(--gray-100);
+}
+
+#services p {
+    color: var(--gray-600);
+    font-weight: 300;
+}
+
+.serv-wrapper, .serv-wrapper img {
+    width: 80vw;
+}
+
+.serv-wrapper img {
+    height: 25rem;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 200ms ease;
+}
+
+.service-gallery {
+    margin-top: 2.5vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem 1rem;
+    justify-items: center;
+}
+
+@keyframes jumping {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(.5rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .serv-wrapper, .serv-wrapper img {
+        width: 35vw;
+    }
+
+    .serv-wrapper img {
+        height: 25rem;
+        object-fit: cover;
+        filter: brightness(.75);
+        transition: 200ms ease;
+    }
+    .service-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .serv-wrapper, .serv-wrapper img {
+        width: 25vw;
+        max-width: 30rem;
+    }
+
+    .service-gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
