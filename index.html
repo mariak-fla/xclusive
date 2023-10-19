@@ -8,8 +8,17 @@
     <title>Xclusive</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function() {
+            $("#navbar").load("navbar.html")
+        })
+    </script>
 </head>
 <body>
+    <header>
+        <div id="navbar"></div>
+    </header>
     <main>
         <section id="video">
             <div class="video-overlay-container">

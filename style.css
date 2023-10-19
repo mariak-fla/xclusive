@@ -12,6 +12,11 @@ body {
     width: 0;
 }
 
+a, ul {
+    list-style: none;
+    text-decoration: none;
+}
+
 :root {
     --ff-title: "Playfair Display", serif;
     --ff-body: "Lato", sans-serif;
@@ -22,12 +27,6 @@ body {
     --gray-600: #57534e;
     --gray-800: #292524;
 }
-
-/* section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
- */
 
 h2 {
     font-family: var(--ff-title);
@@ -82,7 +81,7 @@ p {
     color: var(--gray-300);
     width: 90%;
     max-width: 600px;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
     font-family: var(--ff-body);
     font-size: clamp(0.85rem, 0.792rem + 0.231vw, 1rem);
 }
