@@ -187,21 +187,25 @@ section#services, section#testimonials {
     justify-items: center;
 }
 
-section#about {
-    background: var(--gray-900);
+section#about, section#testimonials {
     min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    background-image: url("/noise.svg");
+    overflow: hidden;
+}
+
+section#about {
+    background: var(--gray-900);
+    background-image: url("assets/noise.svg");
 }
 
 section#about::before {
     content: "";
     position: absolute;
     opacity: .35;
-    background-image: url("/about-bg.svg");
+    background-image: url("assets/about-bg.svg");
     background-size: cover;
     width: 40vh;
     height: 40vh;
@@ -233,6 +237,62 @@ section#about::before {
 
 #about b {
     color: var(--gray-100);
+}
+
+#testimonials {
+    background: var(--gray-400);
+}
+
+#testimonials::before {
+    content: "";
+    position: absolute;
+    background-image: url("assets/testi-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .5;
+    width: 150vw;
+    height: 70vh;
+    bottom: -25%;
+    left: -20vw;
+}
+
+#testimonials h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 2.5vh;
+}
+
+#testimonials h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonials h2::after, #testimonials h2::before {
+    content: "";
+    margin: .5rem 1rem 0;
+    display: block;
+    position: relative;
+    width: 20%;
+    min-width: 5rem;
+    height: .5px;
+    background-color: var(--gray-600);
+}
+
+.testimonial-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: var(--gray-600);
 }
 
 @keyframes jumping {
@@ -269,6 +329,25 @@ section#about::before {
         height: 60vh;
         bottom: -5rem;
         right: -5rem;
+    }
+    
+    .testimonial-gallery {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5vh;
+    }
+    
+    .testimonial-card {
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #testimonials::before {
+        bottom: -15%;
+        left: -5%;
+        height: 100%;
     }
 }
 
