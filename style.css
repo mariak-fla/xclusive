@@ -333,12 +333,14 @@ section#about::before {
     
     .testimonial-gallery {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 2.5rem;
         margin-top: 5vh;
     }
     
     .testimonial-card {
         height: 25vh;
+        max-width: 25rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
